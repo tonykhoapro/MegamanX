@@ -208,7 +208,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 373806335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3, y: -5.09, z: 0}
+  m_LocalPosition: {x: 43.3, y: -18.6, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0}
   m_Children:
   - {fileID: 2015449994}
@@ -232,7 +232,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.625, y: 2.3125}
+    oldSize: {x: 2.125, y: 2.5}
     newSize: {x: 2.125, y: 2.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -283,8 +283,8 @@ MonoBehaviour:
   Die: {fileID: 0}
   healthPoint: 500
   lifePoint: 3
-  runSpeed: 10
-  jumpForce: 3000
+  runSpeed: 6
+  jumpForce: 4500
   StartState: 0
   animator: {fileID: 373806337}
 --- !u!1 &519420028
@@ -22915,7 +22915,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015449993}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.35, z: 0}
+  m_LocalPosition: {x: 0, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373806338}

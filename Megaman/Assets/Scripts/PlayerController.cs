@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         animator.SetFloat("Speed", Mathf.Abs(R2D.velocity.x));
-        animator.SetFloat("VerticalSpeed", Mathf.Abs(R2D.velocity.y));
+        animator.SetFloat("VerticalVelocity", R2D.velocity.y);
         isGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if (Input.GetButtonDown("Jump") && isGround)
         {
@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour
     void HandleInput()
     {
         float h = Input.GetAxisRaw("Horizontal");
-        R2D.velocity = new Vector2(h * runSpeed, R2D.velocity.y);
+        
         if (h == 1)
         {
             
@@ -138,10 +138,13 @@ public class PlayerController : MonoBehaviour
         {
             // Add a vertical force to the player.
             R2D.AddForce(new Vector2(0f, jumpForce));
-
+            
             // Make sure the player can't jump again until the jump conditions from Update are satisfied.
             jump = false;
         }
+        if(R2D.velocity.y != 0)
+            h = h * 0.5f;
+        R2D.velocity = new Vector2(h * runSpeed, R2D.velocity.y);
     }
     //public void OnLanding()
     //{
