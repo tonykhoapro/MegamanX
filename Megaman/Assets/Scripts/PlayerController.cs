@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D R2D;
     private Transform groundCheck;
     private bool isGround = false;
+    private bool isShooting = false;
 
     //public PlayerController(int hp, int m, State state) : base(hp, m)
     //{
@@ -63,11 +64,20 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetFloat("Speed", Mathf.Abs(R2D.velocity.x));
         animator.SetFloat("VerticalVelocity", R2D.velocity.y);
+        animator.SetBool("isShooting", isShooting);
         isGround = Physics2D.Linecast(transform.position, groundCheck.position, 1 << LayerMask.NameToLayer("Ground"));
         if (Input.GetButtonDown("Jump") && isGround)
         {
             jump = true;
             //animator.SetBool("isJumping", true);
+        }
+        if(Input.GetButton("Fire1"))
+        {
+            isShooting = true;
+        }
+        else
+        {
+            isShooting = false;
         }
     }
 
